@@ -1,0 +1,58 @@
+.header {
+    z-index: 2;
+}
+
+.header,
+.header>* {
+    transition: .4s ease-in-out;
+}
+
+.header ul li {
+    font-size: 1.1rem;
+    position: relative;
+    font-family: "Nunito-Bold";
+}
+
+.header .selected {
+    color: white;
+}
+
+.header .selected::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    right: 0;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #ffce8a;
+}
+
+.smlMenu{
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .3s ease-in-out;
+}
+.openSmlMenu{
+    transform: scaleY(1);
+}
+
+/*Media queries*/
+@media (min-width: 1536px) {
+    .header ul li {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width:1300px) {
+    .bigMenu {
+        display: none;
+    }
+}
+
+@media (min-width:1300px) {
+    .smallMenu {
+        display: none;
+    }
+}

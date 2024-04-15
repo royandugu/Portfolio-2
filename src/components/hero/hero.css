@@ -1,0 +1,67 @@
+.iconContainer>*{
+    color:rgb(200,200,200);
+    font-size:30px;
+    cursor: pointer;
+}
+.iconContainer>*:hover{
+    color:white;
+}
+.animateTopDown{
+    animation: topDown 3s linear infinite alternate;    
+}
+.animateTopDownSml{
+    animation: topDownSmall 3s linear infinite alternate;
+}
+.lineAnimation{
+    animation: animateLine 3s linear infinite alternate;
+}
+h5{
+    font-size:3.2rem;
+}
+p{
+    font-family: "Nunito-Regular";
+    font-size:1.5rem;
+    color:white;
+}
+/*Media queries*/
+@media (max-width: 900px) {
+    p{
+        font-size: 1.2rem;
+    }
+    h5{
+        font-size:2rem;
+    }
+    h1{
+        font-size:7rem;
+    }
+    /* Additional styles for elements within the header */
+}
+
+ 
+
+/*Animation*/
+
+@keyframes topDown{
+    0%{
+        bottom:0rem;
+    }
+    100%{
+        bottom:-3rem;
+    }
+}
+@keyframes animateLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 30%;
+    }
+}
+@keyframes topDownSmall{
+    0%{
+        top:20%;
+    }
+    100%{
+        top:50%;
+    }
+}

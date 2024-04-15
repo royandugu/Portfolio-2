@@ -1,0 +1,31 @@
+#about ol{
+    list-style:disc;
+    margin-left:18px;
+}
+#about ol li{
+    color: rgb(200,200,200);
+    margin-top:1.5rem;
+    font-size: 1.2rem;
+    gap:1.2rem;
+}
+#about .boldText{
+    font-family: 'Nunito-Bold';
+}
+#about .expertise svg{
+    font-size: 5rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+/* Media queries */
+
+@media (max-width: 900px) {
+    #about ol li{
+        font-size: 17px;
+    }   
+}
+@media (max-width: 1300px){
+    #about .expertise svg{
+        font-size: 3rem;
+    } 
+}
