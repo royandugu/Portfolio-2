@@ -48,7 +48,7 @@ const About = () => {
                     <div className="w-full lg:w-1/2 lg:pl-20">
                         <div className="border-2 border-ternary w-full" data-aos="fade-left">
                             <img src="./Images/myPhoto.jpg" className="w-full" alt='My picture'/>
-                        </div>
+                        </div> 
                     </div>
                 </div>
 
