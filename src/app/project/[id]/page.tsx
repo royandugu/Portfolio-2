@@ -16,7 +16,7 @@ const projectDescription = [
     },
     {
         subtitle:"Virtual wear-on glasses",
-        title:"Prototype- Three.JS/Mediapipe"
+        title:"Prototype- Three.JS / Mediapipe"
     },
     {
         banner:"/Images/Projects/banners/designersHub.jpg",
@@ -37,7 +37,7 @@ const Page = ({ params }: { params: { id: string } }) => {
 
             <div style={{ background: `url(${projectDescription[parseInt(params.id) - 1]?.banner})`, backgroundSize: "cover" }}>
                 <div className="bg-[rgba(0,0,0,.7)] flex justify-center pt-96 pb-10">
-                    <div className="px-10 sm:px-10">
+                    <div className="px-5 sm:px-0">
                         <p className="text-ternary"> {projectDescription[parseInt(params.id) - 1]?.subtitle} </p>
                         <h5 className="max-w-4xl"> {projectDescription[parseInt(params.id) - 1]?.title} </h5>
                     </div>

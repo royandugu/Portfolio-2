@@ -23,7 +23,14 @@ p{
     font-size:1.5rem;
     color:white;
 }
+
+
 /*Media queries*/
+@media(max-width:375px){
+    h1{
+        font-size:5rem !important;
+    }
+}
 @media (max-width: 900px) {
     p{
         font-size: 1.2rem;
@@ -34,7 +41,6 @@ p{
     h1{
         font-size:7rem;
     }
-    /* Additional styles for elements within the header */
 }
 
  

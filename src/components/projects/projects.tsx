@@ -18,10 +18,10 @@ const ProjectOne = () => {
     return (
         <div className="w-full flex-shrink-0">
             <img src="./Images/Projects/wizeAdminDashboard.png" className="w-full" alt='Admin dashboard wize'/>
-            <div className="bg-secondary p-10 pr-5">
+            <div className="bg-secondary p-5 pt-10 sm:p-10 pr-5">
                 <p className='h-[120px] overflow-hidden'> Wize Consult : Design, Admin Dashboard, Student portal, CMS </p>
                 <p className="mt-5 text-[20px] mb-10 text-[rgb(200,200,200)] h-[85px] overflow-hidden"> Empower your consultancy with a website that puts you in control. The user-friendly admin dashboard allows seamless content management. From updating services and team profiles to posting insightful articles, the platform ensures that your website remains current and reflective of your evolving consultancy offerings. </p>
-                <Link href="/project/1" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[20px]">Project details</button></Link>
+                <Link href="/project/1" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[15px] sm:text-[20px]">Project details</button></Link>
             </div>
         </div>
     )
@@ -33,7 +33,7 @@ const ProjectTwo = () => {
             <div className="bg-secondary p-10 pr-5">
                 <p className='h-[120px] overflow-hidden'> Pokemon : Light/Dark mode, Poke API implementation </p>
                 <p className="mt-5 text-[20px] mb-10 text-[rgb(200,200,200)] h-[85px] overflow-hidden"> As a passionate developer, I am thrilled to showcase my creation – a dynamic and engaging Pokemon website that brings the magical world of Pokemon to life! Let&apos;s take a closer look at what makes this project stand out:</p>
-                <Link href="/project/2" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[20px]">Project details</button></Link>
+                <Link href="/project/2" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[15px] sm:text-[20px]">Project details</button></Link>
             
             </div>
         </div>
@@ -46,7 +46,7 @@ const ProjectThree = () => {
             <div className="bg-secondary p-10 pr-5">
                 <p className='h-[120px] overflow-hidden'> Virtual wear-on glasses prototype- Three.JS/Mediapipe </p>
                 <p className="mt-5 text-[20px] mb-10 text-[rgb(200,200,200)] h-[85px] overflow-hidden">Developed to unlock the gateway to augmented reality fashion with GlassWear, a prototype designed to redefine how we interact with virtual garments. Seamlessly blending the boundaries between the physical and digital worlds, GlassWear offers users a glimpse into the future of personalized style and expression.</p>
-                <Link href="/project/3" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[20px]">Project details</button></Link>
+                <Link href="/project/3" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[15px] sm:text-[20px]">Project details</button></Link>
             </div>
         </div>
     )
@@ -58,7 +58,7 @@ const ProjectFour = () => {
             <div className="bg-secondary p-10 pr-5">
                 <p className='h-[120px] overflow-hidden'> Designers Hub: Elevating Interior Designing to Artistry </p>
                 <p className="mt-5 text-[20px] mb-10 text-[rgb(200,200,200)] h-[85px] overflow-hidden"> Transforming a vision into reality is at the core of my interior design websites. Through a powerful admin dashboard, the admin has the ability to customize every aspect of their website, ensuring it reflects their unique style and brand identity. From color schemes and fonts to layout arrangements, the possibilities are endless. </p>
-                <Link href="/project/4" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[20px]">Project details</button></Link>
+                <Link href="/project/4" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[15px] sm:text-[20px]">Project details</button></Link>
             </div>
         </div>
     )
@@ -70,7 +70,7 @@ const ProjectFive = () => {
             <div className="bg-secondary p-10 pr-5">
                 <p className='h-[120px] overflow-hidden'> Event-Book : Event sorting, listing via location and End user&apos;s perspective </p>
                 <p className="mt-5 text-[20px] mb-10 text-[rgb(200,200,200)] h-[85px] overflow-hidden">Explore the future of event management with EventBooker, a cutting-edge platform designed to cater to the unique needs of both administrators and event organizers. Let&apos;s dive into the distinctive features that make this project stand out: </p>
-                <Link href="/project/5" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[20px]">Project details</button></Link>
+                <Link href="/project/5" target='_blank'><button className="py-5 font-bold text-ternary uppercase text-[15px] sm:text-[20px]">Project details</button></Link>
             
             </div>
         </div>
@@ -119,12 +119,12 @@ const Projects = () => {
 
     return (
         <section id="projects">
-            <div ref={ref} className="flex items-center justify-between">
+            <div ref={ref} className="flex sm:items-center flex-col sm:flex-row sm:justify-between">
                 <div>
                     <p className="text-ternary" data-aos="fade-right"> Here are some of my </p>
                     <h5 data-aos="fade-right"> Projects </h5>
                 </div>
-                <div className="flex gap-5">
+                <div className="flex gap-5 mt-5 sm:mt-0">
                     <div className="bg-ternary p-5 cursor-pointer bg-opacity-80 hover:bg-opacity-100" onClick={() => {
                         slider?.current?.slickPrev()
                         sliderMid?.current?.slickPrev()
