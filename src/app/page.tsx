@@ -40,7 +40,8 @@ const Page = () => {
   )
   else {
     return (
-      <main style={{ scrollBehavior: 'smooth' }}>
+      <main>
+         
         <ContextState>
           <AosWrapper>
             <Header/>
