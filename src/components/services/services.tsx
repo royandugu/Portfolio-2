@@ -24,7 +24,7 @@ const Services = () => {
     const contextContainer = useContext(context);
 
     const { ref, inView } = useInView({
-        threshold: 0.2,
+        threshold: 0.5,
     });
 
     useEffect(() => {
@@ -32,8 +32,8 @@ const Services = () => {
     }, [inView])
 
     return (
-        <section id="services">
-            <div ref={ref} className="bg-secondary">
+        <section ref={ref} id="services">
+            <div className="bg-secondary">
                 <div className="p-20 pl-10 pr-10 brk2:pl-20 brk2:pr-20">
                     <div className="flex-1 gap-10 flex flex-wrap">
                         <div className='w-full md:w-[28%] brk2:w-[30%]'>

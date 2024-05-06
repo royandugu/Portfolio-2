@@ -109,7 +109,7 @@ const Projects = () => {
     const contextContainer = useContext(context);
 
     const { ref, inView } = useInView({
-        threshold: 0.4,
+        threshold: 0.5,
     });
 
     useEffect(() => {
@@ -118,8 +118,8 @@ const Projects = () => {
 
 
     return (
-        <section id="projects">
-            <div ref={ref} className="flex sm:items-center flex-col sm:flex-row sm:justify-between">
+        <section ref={ref} id="projects">
+            <div className="flex sm:items-center flex-col sm:flex-row sm:justify-between">
                 <div>
                     <p className="text-ternary" data-aos="fade-right"> Here are some of my </p>
                     <h5 data-aos="fade-right"> Projects </h5>
