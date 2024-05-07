@@ -24,7 +24,7 @@ const Services = () => {
     const contextContainer = useContext(context);
 
     const { ref, inView } = useInView({
-        threshold: 0.5,
+        threshold: 0.2,
     });
 
     useEffect(() => {

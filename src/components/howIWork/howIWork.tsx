@@ -9,7 +9,7 @@ const HowIWork=()=>{
     const contextContainer=useContext(context);
 
     const { ref, inView } = useInView({
-        threshold: 0.3,
+        threshold: 0.2,
     });
 
     useEffect(()=>{

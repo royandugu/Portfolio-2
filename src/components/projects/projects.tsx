@@ -109,7 +109,7 @@ const Projects = () => {
     const contextContainer = useContext(context);
 
     const { ref, inView } = useInView({
-        threshold: 0.5,
+        threshold: 0.8,
     });
 
     useEffect(() => {

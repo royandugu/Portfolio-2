@@ -2,7 +2,7 @@
 
 import context from '@/context/context';
 
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaReact } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
@@ -14,10 +14,15 @@ import "./about.css";
 
 const About = () => {
     const contextContainer = useContext(context);
+    const [threshold,setThreshold]=useState(0.8);
 
     const { ref, inView } = useInView({
-        threshold: 0.6,
+        threshold: threshold,
     });
+
+    useEffect(()=>{
+        window.innerWidth>1023 ? setThreshold(0.8) : setThreshold(0.2) 
+    },[])
 
     useEffect(() => {
         if (inView) contextContainer.setActiveNav(1);
