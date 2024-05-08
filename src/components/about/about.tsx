@@ -9,6 +9,7 @@ import { IoLogoNodejs } from "react-icons/io";
 import { SiMongodb } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
+import Image from 'next/image';
 
 import "./about.css";
 
@@ -53,8 +54,8 @@ const About = () => {
                     </div>
                     <div className="w-full lg:w-1/2 lg:pl-20">
                         <div className="border-2 border-ternary w-full" data-aos="fade-left">
-                            <img src="./Images/myPhoto.jpg" className="w-full" alt='My picture'/>
-                        </div> 
+                            <Image height={640} width={640} src="/Images/myPhoto.jpg" className="w-full" alt='My picture'/>
+                        </div>  
                     </div>
                 </div>
 
