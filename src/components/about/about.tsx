@@ -21,7 +21,6 @@ const About = () => {
     });
 
     useEffect(()=>{
-        console.log("first")
         if(window.innerWidth>1023) setThreshold(0.8);
         else if(window.innerWidth>=768 && window.innerWidth<=1023) setThreshold(0.7);
         else setThreshold(0.2);
@@ -30,8 +29,6 @@ const About = () => {
     useEffect(() => {
         if (inView) contextContainer.setActiveNav(1);
     }, [inView])
-    console.log(threshold)
-
 
     return (
         <section ref={ref}>
