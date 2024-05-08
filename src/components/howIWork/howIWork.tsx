@@ -4,6 +4,7 @@ import context from '@/context/context';
 
 import { useEffect, useContext } from 'react';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 const HowIWork=()=>{
     const contextContainer=useContext(context);
@@ -21,7 +22,7 @@ const HowIWork=()=>{
             <h5 ref={ref} className="text-center"> How I Work <span className="text-ternary">?</span></h5>
             <div className="flex flex-col md:flex-row items-center gap-20 mt-20">
                 <div className="flex-1 w-1/2" data-aos="fade-right">
-                    <img src="./Images/collaboration.svg" alt='Requirement analysis svg'/>
+                    <Image width={748.75606} height={544} src="./Images/collaboration.svg" className='w-full' alt='Requirement analysis svg'/>
                 </div>
                 <div className="flex-1" data-aos="fade-left">
                     <p className="text-[rgb(200,200,200)]"> - Requirement Analysis </p>
@@ -35,13 +36,13 @@ const HowIWork=()=>{
                     <p className="mt-10"> Here I translate gathered requirements into tangible design elements, including system architecture, user interfaces, data models, and workflows. Ensure alignment with stakeholder expectations and industry best practices.</p>
                 </div>
                 <div className="w-1/2" data-aos="fade-left">
-                    <img src="./Images/design.svg" alt='Design svg'/>
+                    <Image width={748.75606} height={544} src="./Images/design.svg" className='w-full' alt='Design svg'/>
                 </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-20 mt-20">
                 <div className="w-1/2" data-aos="fade-right">
-                    <img src="./Images/coding.svg" alt='Coding svg'/>
+                    <Image width={748.75606} height={544} src="./Images/coding.svg" className='w-full' alt='Coding svg'/>
                 </div>
                 <div className="flex-1" data-aos="fade-left">
                     <p className="text-[rgb(200,200,200)]"> - Coding </p>
@@ -55,13 +56,13 @@ const HowIWork=()=>{
                     <p className="mt-10"> Here I execute test cases to validate that the system functions according to the specified requirements and user expectations. Verify correctness, completeness, and accuracy of system behavior across diverse scenarios.</p>
                 </div>
                 <div className="w-1/2" data-aos="fade-left">
-                    <img src="./Images/testing.svg" alt='Testing svg'/>
+                    <Image width={748.75606} height={544} src="./Images/testing.svg" className='w-full' alt='Testing svg'/>
                 </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-20 mt-20">
                 <div className="w-1/2" data-aos="fade-right">
-                    <img src="./Images/review.svg" alt='Review svg'/>
+                    <Image width={748.75606} height={544} src="./Images/review.svg" className='w-full' alt='Review svg'/>
                 </div>
                 <div className="flex-1" data-aos="fade-left">
                     <p className="text-[rgb(200,200,200)]"> - Deployement </p>
