@@ -49,10 +49,10 @@ const Hero = () => {
                 </div>
             </div>
             <div className="absolute z-[-1] hidden md:block bottom-0 left-[15%] opacity-10 w-[40%] animateTopDown">
-                <Image height={500} width={500} src="/Images/myCartoonMin.png" className="w-full" alt="My cartoon"/>
+                <Image priority height={500} width={500} src="/Images/myCartoonMin.png" className="w-full" alt="My cartoon"/>
             </div>
             <div className="absolute z-[-1] top-[20%] block md:hidden left-[15%] opacity-10 w-full">
-                <Image height={500} width={500} src="/Images/myCartoonMin.png" className="w-full" alt="My cartoon"/>
+                <Image priority height={500} width={500} src="/Images/myCartoonMin.png" className="w-full" alt="My cartoon"/>
             </div>
         </section>
     )
