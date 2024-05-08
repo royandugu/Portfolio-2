@@ -14,19 +14,23 @@ import "./about.css";
 
 const About = () => {
     const contextContainer = useContext(context);
-    const [threshold,setThreshold]=useState(0.8);
+    const [threshold,setThreshold]=useState(0);
 
     const { ref, inView } = useInView({
         threshold: threshold,
     });
 
     useEffect(()=>{
-        window.innerWidth>1023 ? setThreshold(0.8) : setThreshold(0.2) 
+        console.log("first")
+        if(window.innerWidth>1023) setThreshold(0.8);
+        else if(window.innerWidth>=768 && window.innerWidth<=1023) setThreshold(0.7);
+        else setThreshold(0.2);
     },[])
 
     useEffect(() => {
         if (inView) contextContainer.setActiveNav(1);
     }, [inView])
+    console.log(threshold)
 
 
     return (

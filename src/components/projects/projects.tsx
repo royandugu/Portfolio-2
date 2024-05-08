@@ -3,7 +3,7 @@
 import context from '@/context/context';
 import Link from 'next/link';
 
-import { useEffect, useContext, useRef } from 'react';
+import { useEffect, useContext, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
@@ -107,10 +107,16 @@ const Projects = () => {
     }
 
     const contextContainer = useContext(context);
+    const [threshold,setThreshold]=useState(0.8);
 
     const { ref, inView } = useInView({
-        threshold: 0.8,
+        threshold: threshold,
     });
+
+    useEffect(()=>{
+        if(window.innerWidth>400) setThreshold(0.8);
+        else setThreshold(0.5)
+    },[]) 
 
     useEffect(() => {
         if (inView) contextContainer.setActiveNav(4);
