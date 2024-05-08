@@ -11,6 +11,8 @@ import { SiNextdotjs } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
 import Image from 'next/image';
 
+import MyPhoto from "../../../public/Images/myPhoto.jpg";
+
 import "./about.css";
 
 const About = () => {
@@ -54,7 +56,7 @@ const About = () => {
                     </div>
                     <div className="w-full lg:w-1/2 lg:pl-20">
                         <div className="border-2 border-ternary w-full" data-aos="fade-left">
-                            <Image height={640} width={640} src="/Images/myPhoto.jpg" className="w-full" alt='My picture'/>
+                            <Image src={MyPhoto} className="w-full" alt='My picture'/>
                         </div>  
                     </div>
                 </div>
