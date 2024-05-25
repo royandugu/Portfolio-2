@@ -4,7 +4,6 @@ import context from '@/context/context';
 import Link from 'next/link';
 
 import { useEffect, useContext, useRef, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -108,20 +107,28 @@ const Projects = () => {
     }
 
     const contextContainer = useContext(context);
-    const [threshold,setThreshold]=useState(0.8);
+    const ref=useRef(null);
 
-    const { ref, inView } = useInView({
-        threshold: threshold,
-    });
-
-    useEffect(()=>{
-        if(window.innerWidth>400) setThreshold(0.8);
-        else setThreshold(0.5)
-    },[]) 
 
     useEffect(() => {
-        if (inView) contextContainer.setActiveNav(4);
-    }, [inView])
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                contextContainer.setActiveNav(4)
+            }
+          });
+        }, { threshold: 0.3 }); 
+    
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+    
+        return () => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        };
+      }, []);
 
 
     return (

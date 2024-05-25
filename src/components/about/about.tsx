@@ -2,8 +2,7 @@
 
 import context from '@/context/context';
 
-import { useEffect, useContext, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useContext, useState, useRef } from 'react';
 import { FaReact } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import { SiMongodb } from "react-icons/si";
@@ -17,21 +16,27 @@ import "./about.css";
 
 const About = () => {
     const contextContainer = useContext(context);
-    const [threshold,setThreshold]=useState(0);
-
-    const { ref, inView } = useInView({
-        threshold: threshold,
-    });
-
-    useEffect(()=>{
-        if(window.innerWidth>1023) setThreshold(0.8);
-        else if(window.innerWidth>=768 && window.innerWidth<=1023) setThreshold(0.7);
-        else setThreshold(0.2);
-    },[])
+    const ref=useRef(null);
 
     useEffect(() => {
-        if (inView) contextContainer.setActiveNav(1);
-    }, [inView])
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                contextContainer.setActiveNav(1)
+            }
+          });
+        }, { threshold: 0.3 }); 
+    
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+    
+        return () => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        };
+      }, []);
 
     return (
         <section ref={ref}>

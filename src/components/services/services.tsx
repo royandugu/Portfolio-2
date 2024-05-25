@@ -2,9 +2,7 @@
 
 import context from '@/context/context';
 
-import { useEffect, useContext } from 'react';
-import { useInView } from 'react-intersection-observer';
-
+import { useEffect, useContext, useRef } from 'react';
 
 import { services } from "../statics/statics";
 import { MdDesignServices } from "react-icons/md";
@@ -23,13 +21,27 @@ const Services = () => {
 
     const contextContainer = useContext(context);
 
-    const { ref, inView } = useInView({
-        threshold: 0.2,
-    });
+    const ref=useRef(null);
 
     useEffect(() => {
-        if (inView) contextContainer.setActiveNav(3);
-    }, [inView])
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                contextContainer.setActiveNav(3)
+            }
+          });
+        }, { threshold: 0.2 }); 
+    
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+    
+        return () => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        };
+      }, []);
 
     return (
         <section ref={ref} id="services">

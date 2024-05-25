@@ -2,20 +2,32 @@
 
 import context from '@/context/context';
 
-import { useEffect, useContext } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useContext, useRef } from 'react';
 import Image from 'next/image';
 
 const HowIWork=()=>{
     const contextContainer=useContext(context);
+    const ref=useRef(null);
 
-    const { ref, inView } = useInView({
-        threshold: 0.2,
-    });
-
-    useEffect(()=>{
-        if(inView) contextContainer.setActiveNav(2);
-    },[inView])
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                contextContainer.setActiveNav(2)
+            }
+          });
+        }, { threshold: 0.2}); 
+    
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+    
+        return () => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        };
+      }, []);
 
     return(
         <section ref={ref} id="howIWork" data-aos="fade-right">

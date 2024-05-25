@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect } from "react";
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useRef } from "react";
 
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
@@ -18,14 +17,27 @@ import "./hero.css";
 
 const Hero = () => {
     const contextContainer=useContext(context);
+    const ref=useRef(null);
 
-    const { ref, inView } = useInView({
-        threshold: 0.5,
-    });
-
-    useEffect(()=>{
-        if(inView) contextContainer.setActiveNav(0);
-    },[inView])
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              contextContainer.setActiveNav(0);
+            }
+          });
+        }, { threshold: 0.5}); // 10% of the element must be visible
+    
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+    
+        return () => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        };
+      }, []);
 
     return (
         <section ref={ref} id="hero" className="hero relative">
