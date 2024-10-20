@@ -40,7 +40,7 @@ const About = () => {
 
     return (
         <section ref={ref}>
-            <div id="about" className="bg-secondary relative p-20 pl-10 pr-10 lg:pl-20 lg:pr-20 ">
+            <div id="about" className="bg-secondary relative p-20 pl-5 pr-5 lg:pl-20 lg:pr-20 ">
                 <div className="absolute top-[-30px] left-0 h-[90px] w-[90px] bg-ternary"></div>
                 <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
                     <div className="lg:flex-1">

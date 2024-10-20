@@ -41,7 +41,7 @@ const Hero = () => {
 
     return (
         <section ref={ref} id="hero" className="hero relative">
-            <div className="flex flex-col md:flex-row md:items-center justify-between pt-40 md:pt-64 pb-10">
+            <div className="flex flex-col md:flex-row md:items-center justify-between pt-40 pb-5 md:pt-64 lg:pb-10">
                 <div> 
                     <h1 data-aos="fade-right"> Royan</h1>
                     <h1 data-aos="fade-right" className="leading-[50px]"> Dugu. </h1>
@@ -60,7 +60,7 @@ const Hero = () => {
                     <Link href="./resume.pdf" download={"resume.pdf"} target="_blank"><p className="text-ternary cursor-pointer mt-11 underline" data-aos="fade-up"> Download CV </p></Link>
                 </div>
             </div>
-            <div className="absolute z-[-1] hidden md:block bottom-0 left-[15%] opacity-10 w-[40%] animateTopDown">
+            <div className="absolute z-[-1] hidden md:block bottom-[-60px] left-[15%] opacity-10 w-[40%]">
                 <Image priority height={500} width={500} src="/Images/myCartoonMin.png" className="w-full" alt="My cartoon"/>
             </div>
             <div className="absolute z-[-1] top-[20%] block md:hidden left-[15%] opacity-10 w-full">
